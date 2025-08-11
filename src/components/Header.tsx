@@ -6,6 +6,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
+  const contractAddress = '0x1234567890abcdef1234567890abcdef12345678';
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
@@ -45,6 +46,9 @@ const Header: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
             >
               {item.name}
             </motion.a>
@@ -52,6 +56,7 @@ const Header: React.FC = () => {
           <button
             onClick={copyToClipboard}
             className="hidden md:inline-flex btn bg-primary text-bg ml-6"
+            aria-label="Copy contract address"
           >
             {copied ? 'Copied' : 'Copy Contract'}
             <Copy size={16} className="ml-2" />
@@ -62,6 +67,8 @@ const Header: React.FC = () => {
         <button
           className="md:hidden text-text"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -85,6 +92,14 @@ const Header: React.FC = () => {
               {item.name}
             </a>
           ))}
+          <button
+            onClick={copyToClipboard}
+            className="w-full btn bg-primary text-bg mt-2"
+            aria-label="Copy contract address"
+          >
+            {copied ? 'Copied' : 'Copy Contract'}
+            <Copy size={16} className="ml-2" />
+          </button>
         </motion.nav>
       )}
     </header>

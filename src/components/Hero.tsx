@@ -6,6 +6,8 @@ const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
   const truncated = `${contractAddress.slice(0,6)}...${contractAddress.slice(-4)}`;
+  const contractAddress = '0x1234567890abcdef1234567890abcdef12345678';
+  const truncated = `${contractAddress.slice(0, 6)}...${contractAddress.slice(-4)}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
@@ -25,6 +27,17 @@ const Hero: React.FC = () => {
           <h1 className="font-black neon-text text-primary">$FRSHMEME</h1>
           <p className="mt-4 text-xl text-muted max-w-xl mx-auto lg:mx-0">
             The Freshest Memes on the Blockchain. Strategic meme coin investment fund deploying transaction fees to identify and invest in high-potential tokens before mainstream adoption.
+=======
+          <h1 className="text-4xl md:text-7xl font-black mb-6">
+            <span className="neon-text text-primary">$FRSHMEME</span>
+          </h1>
+
+          <p className="text-xl md:text-3xl mb-6 electric-text font-bold">
+            The Freshest Memes on the Blockchain
+          </p>
+
+          <p className="mt-2 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 text-gray-300">
+            Strategic meme coin investment fund deploying transaction fees to identify and invest in high-potential tokens before mainstream adoption.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -35,6 +48,10 @@ const Hero: React.FC = () => {
           <div className="mt-8 panel inline-flex items-center gap-2 mx-auto lg:mx-0">
             <code className="font-mono text-sm text-primary">{truncated}</code>
             <button onClick={copyToClipboard} className="p-2">
+          <div className="mt-8 panel inline-flex items-center gap-2 mx-auto lg:mx-0 px-3 py-2">
+            <code className="font-mono text-sm text-primary">{truncated}</code>
+            <button onClick={copyToClipboard} className="p-2" aria-label="Copy contract address">
+
               <Copy size={16} className={copied ? 'text-primary' : 'text-text'} />
             </button>
           </div>
@@ -57,6 +74,9 @@ const Hero: React.FC = () => {
               width="32"
               height="32"
               className="w-32 h-32 mx-auto mb-8 rounded-full animate-pulse-glow"
+              width={128}
+              height={128}
+              className="mx-auto mb-8 rounded-full"
             />
           </a>
         </motion.div>

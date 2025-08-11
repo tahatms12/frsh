@@ -155,6 +155,17 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <p className="text-muted text-sm">
+            * Portfolio values and performance data are updated in real-time
+          </p>
+        </motion.div>
       </div>
     </section>
   );
