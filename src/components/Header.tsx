@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
   const contractAddress = '0x1234567890abcdef1234567890abcdef12345678';
 
   const copyToClipboard = () => {
@@ -43,9 +42,6 @@ const Header: React.FC = () => {
               key={item.name}
               href={item.href}
               className="text-text hover:text-primary transition-colors duration-200"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
@@ -66,7 +62,6 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-text"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
           onClick={() => setIsMenuOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -80,7 +75,6 @@ const Header: React.FC = () => {
           className="md:hidden border-t border-border bg-panel p-4 space-y-3"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
         >
           {navItems.map((item) => (
             <a
