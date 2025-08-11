@@ -25,8 +25,8 @@ const Community: React.FC = () => {
   ];
 
   return (
-    <section id="community" className="py-20 relative z-10">
-      <div className="container mx-auto px-4">
+    <section id="community" className="py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,10 +34,10 @@ const Community: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 electric-text">
+          <h2 className="font-black mb-6 electric-text">
             Join Our Community
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-muted max-w-4xl mx-auto">
             Connect with fellow meme enthusiasts, stay updated on portfolio performance, 
             and be part of the freshest community in crypto.
           </p>
@@ -54,16 +54,16 @@ const Community: React.FC = () => {
               viewport={{ once: true }}
               className="glass-card p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300"
             >
-              <div className="text-neon-green mb-4 flex justify-center">
+              <div className="text-primary mb-4 flex justify-center">
                 {stat.icon}
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-text mb-2">
                 {stat.title}
               </h3>
-              <p className="text-3xl font-black text-electric-blue mb-2">
+              <p className="text-3xl font-black text-accent mb-2">
                 {stat.value}
               </p>
-              <p className="text-neon-green text-sm">
+              <p className="text-primary text-sm">
                 {stat.change} this week
               </p>
             </motion.div>
@@ -80,16 +80,16 @@ const Community: React.FC = () => {
           <h3 className="text-3xl font-bold mb-4 neon-text">
             Stay in the Loop
           </h3>
-          <p className="text-gray-300 mb-6">
+          <p className="text-muted mb-6">
             Get exclusive updates on portfolio performance, new investments, and airdrop announcements.
           </p>
           <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-green"
+              className="flex-1 px-4 py-3 bg-white/10 border border-border rounded-lg text-text placeholder-gray-400 focus:outline-none focus:border-primary"
             />
-            <button className="bg-neon-green text-black px-8 py-3 rounded-lg font-bold hover:bg-neon-green/80 transition-colors">
+            <button className="bg-primary text-bg px-8 py-3 rounded-lg font-bold hover:bg-primary/80 transition-colors">
               Subscribe
             </button>
           </div>
@@ -108,8 +108,8 @@ const Community: React.FC = () => {
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="text-lg font-semibold text-neon-green mb-3">✅ Do's</h4>
-              <ul className="space-y-2 text-gray-300">
+              <h4 className="text-lg font-semibold text-primary mb-3">✅ Do's</h4>
+              <ul className="space-y-2 text-muted">
                 <li>• Share quality meme content</li>
                 <li>• Engage respectfully with others</li>
                 <li>• Contribute to discussions</li>
@@ -118,7 +118,7 @@ const Community: React.FC = () => {
             </div>
             <div>
               <h4 className="text-lg font-semibold text-red-400 mb-3">❌ Don'ts</h4>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-muted">
                 <li>• Spam or excessive promotion</li>
                 <li>• Share financial advice</li>
                 <li>• Engage in toxic behavior</li>
