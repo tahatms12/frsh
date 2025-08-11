@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
+  const contractAddress = '0x1234567890abcdef1234567890abcdef12345678';
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black/40 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 inset-x-0 z-50 glass-card border-b border-border backdrop-blur-md">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <motion.span
           className="text-2xl font-bold text-primary"
@@ -34,34 +34,6 @@ const Header: React.FC = () => {
         >
           $FRSHMEME
         </motion.span>
-    <header className="fixed top-0 left-0 right-0 z-50 glass-card">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <motion.div
-            className="flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-2xl font-bold neon-text">$FRSHMEME</span>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-neon-green transition-colors duration-300"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
-          </nav>
-
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -70,9 +42,9 @@ const Header: React.FC = () => {
               key={item.name}
               href={item.href}
               className="text-text hover:text-primary transition-colors duration-200"
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
             >
               {item.name}
             </motion.a>
@@ -80,6 +52,7 @@ const Header: React.FC = () => {
           <button
             onClick={copyToClipboard}
             className="hidden md:inline-flex btn bg-primary text-bg ml-6"
+            aria-label="Copy contract address"
           >
             {copied ? 'Copied' : 'Copy Contract'}
             <Copy size={16} className="ml-2" />
@@ -89,7 +62,8 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-text"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -101,7 +75,6 @@ const Header: React.FC = () => {
           className="md:hidden border-t border-border bg-panel p-4 space-y-3"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
         >
           {navItems.map((item) => (
             <a
@@ -113,6 +86,14 @@ const Header: React.FC = () => {
               {item.name}
             </a>
           ))}
+          <button
+            onClick={copyToClipboard}
+            className="w-full btn bg-primary text-bg mt-2"
+            aria-label="Copy contract address"
+          >
+            {copied ? 'Copied' : 'Copy Contract'}
+            <Copy size={16} className="ml-2" />
+          </button>
         </motion.nav>
       )}
     </header>
