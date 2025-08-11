@@ -5,40 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-  html {
-    font-size: clamp(15px,1.1vw + 0.4rem,18px);
-  }
-  body {
-    @apply bg-bg text-text font-display antialiased overflow-x-hidden;
-  }
-  h1 {
-    font-size: clamp(2.2rem,5vw,4.2rem);
-  }
-  h2 {
-    font-size: clamp(1.6rem,3vw,2.6rem);
-  }
-}
-
-@layer components {
-  .glass-card {
-    @apply panel;
-  }
-  .panel {
-    @apply rounded-2xl backdrop-blur-xl bg-panel border border-border shadow-glass;
-  }
-  .btn {
-    @apply rounded-pill px-5 py-2.5 text-sm font-semibold tracking-wide focus:outline-none focus:ring-2 focus:ring-primary/40;
-  }
-  .neon-text {
-    text-shadow:0 0 18px rgba(0,255,65,.18);
-  }
-  .electric-text {
-    text-shadow:0 0 18px rgba(0,153,255,.18);
-  }
-
-/* Base layer */
+/* Base */
 @layer base {
   html {
     font-size: clamp(15px, 1.1vw + 0.4rem, 18px);
@@ -59,16 +26,11 @@
     overflow-x: hidden;
   }
 
-  h1 {
-    font-size: clamp(2.2rem, 5vw, 4.2rem);
-  }
-
-  h2 {
-    font-size: clamp(1.6rem, 3vw, 2.6rem);
-  }
+  h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.6rem); }
 }
 
-/* Keyframes kept outside layers */
+/* Keyframes */
 @keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -76,12 +38,12 @@
 }
 
 @keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
 
-/* Components layer */
+/* Components */
 @layer components {
   .panel {
     @apply rounded-2xl backdrop-blur-xl bg-panel border border-border shadow-glass;
@@ -97,13 +59,8 @@
     @apply rounded-pill px-5 py-2.5 text-sm font-semibold tracking-wide focus:outline-none focus:ring-2 focus:ring-primary/40;
   }
 
-  .neon-text {
-    text-shadow: 0 0 18px rgba(0, 255, 65, 0.18);
-  }
-
-  .electric-text {
-    text-shadow: 0 0 18px rgba(0, 153, 255, 0.18);
-  }
+  .neon-text { text-shadow: 0 0 18px rgba(0, 255, 65, 0.18); }
+  .electric-text { text-shadow: 0 0 18px rgba(0, 153, 255, 0.18); }
 
   .animated-bg {
     background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0a0a0a);
@@ -137,10 +94,7 @@
   .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
   .particle:nth-child(9) { left: 90%; animation-delay: 8s; }
 
-  .portfolio-card {
-    transition: all 0.3s ease;
-  }
-
+  .portfolio-card { transition: all 0.3s ease; }
   .portfolio-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
