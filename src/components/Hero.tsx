@@ -20,11 +20,17 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img 
-            src="https://24vzlu2kzs.ufs.sh/f/4JlBnp1v6U48k8uO4IDmleihCX1jUIwbvFKds0kp6Aug7WrS" 
-            alt="FRSHMEME Logo" 
-            className="w-32 h-32 mx-auto mb-8 rounded-full animate-pulse-glow"
-          />
+          <a
+            href="https://freshmemes.online"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://24vzlu2kzs.ufs.sh/f/4JlBnp1v6U48k8uO4IDmleihCX1jUIwbvFKds0kp6Aug7WrS"
+              alt="FRSHMEME Logo"
+              className="w-32 h-32 mx-auto mb-8 rounded-full animate-pulse-glow"
+            />
+          </a>
           
           <h1 className="text-4xl md:text-7xl font-black mb-6">
             <span className="neon-text">$FRSHMEME</span>
