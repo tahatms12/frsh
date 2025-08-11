@@ -30,12 +30,7 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="https://24vzlu2kzs.ufs.sh/f/4JlBnp1v6U48k8uO4IDmleihCX1jUIwbvFKds0kp6Aug7WrS" 
-                alt="FRSHMEME Logo" 
-                className="w-10 h-10 rounded-full"
-              />
+            <div className="mb-4">
               <span className="text-2xl font-bold neon-text">$FRSHMEME</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
