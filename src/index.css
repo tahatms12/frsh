@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import './tokens.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer base {
+  html {
+    font-size: clamp(15px,1.1vw + 0.4rem,18px);
+  }
+  body {
+    @apply bg-bg text-text font-display antialiased;
+  }
+  h1 {
+    font-size: clamp(2.2rem,5vw,4.2rem);
+  }
+  h2 {
+    font-size: clamp(1.6rem,3vw,2.6rem);
+  }
 * {
   margin: 0;
   padding: 0;
@@ -91,8 +104,20 @@ body {
   color: #ff4444;
 }
 
-@media (max-width: 768px) {
-  .particle {
-    font-size: 1.5rem;
+@layer components {
+  .glass-card {
+    @apply panel;
+  }
+  .panel {
+    @apply rounded-2xl backdrop-blur-xl bg-panel border border-border shadow-glass;
+  }
+  .btn {
+    @apply rounded-pill px-5 py-2.5 text-sm font-semibold tracking-wide focus:outline-none focus:ring-2 focus:ring-primary/40;
+  }
+  .neon-text {
+    text-shadow:0 0 18px rgba(0,255,65,.18);
+  }
+  .electric-text {
+    text-shadow:0 0 18px rgba(0,153,255,.18);
   }
 }

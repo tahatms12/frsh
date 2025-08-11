@@ -57,16 +57,16 @@ const Tokenomics: React.FC = () => {
   ];
 
   const distribution = [
-    { label: "Public Sale", percentage: 40, color: "bg-neon-green" },
-    { label: "Liquidity Pool", percentage: 25, color: "bg-electric-blue" },
+    { label: "Public Sale", percentage: 40, color: "bg-primary" },
+    { label: "Liquidity Pool", percentage: 25, color: "bg-accent" },
     { label: "Team & Development", percentage: 15, color: "bg-purple-500" },
     { label: "Marketing", percentage: 10, color: "bg-yellow-500" },
     { label: "Airdrops & Rewards", percentage: 10, color: "bg-pink-500" }
   ];
 
   return (
-    <section id="tokenomics" className="py-20 relative z-10">
-      <div className="container mx-auto px-4">
+    <section id="tokenomics" className="py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,10 +74,10 @@ const Tokenomics: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 electric-text">
+          <h2 className="font-black mb-6 electric-text text-accent">
             Tokenomics
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-muted max-w-4xl mx-auto">
             Transparent and sustainable token economics designed for long-term growth and community rewards.
           </p>
         </motion.div>
@@ -90,6 +90,9 @@ const Tokenomics: React.FC = () => {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
+          <p className="text-muted">Live $FRSHMEME Price</p>
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-4xl font-extrabold text-text">
           <p className="text-gray-300">Live $FRSHMEME Price</p>
           <div className="flex items-center justify-center space-x-2">
             <span className="text-4xl font-extrabold text-white">
@@ -99,6 +102,7 @@ const Tokenomics: React.FC = () => {
               })}
             </span>
             {change.up ? (
+              <ArrowUpRight className="w-6 h-6 text-primary" />
               <ArrowUpRight className="w-6 h-6 text-neon-green" />
             ) : (
               <ArrowDownRight className="w-6 h-6 text-red-500" />
@@ -106,6 +110,7 @@ const Tokenomics: React.FC = () => {
           </div>
           <p
             className={`text-lg font-bold ${
+              change.up ? 'text-primary' : 'text-red-500'
               change.up ? 'text-neon-green' : 'text-red-500'
             }`}
           >
@@ -123,23 +128,24 @@ const Tokenomics: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform duration-300"
+              className="panel p-6 text-center hover:-translate-y-0.5 hover:scale-[1.01] transition-transform duration-200"
             >
-              <div className="text-neon-green mb-4 flex justify-center">
+              <div className="text-primary mb-4 flex justify-center">
                 {stat.icon}
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-text mb-2">
                 {stat.title}
               </h3>
-              <p className="text-2xl font-black text-electric-blue mb-1">
+              <p className="text-2xl font-black text-accent mb-1">
                 {stat.value}
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-muted text-sm">
                 {stat.subtitle}
               </p>
             </motion.div>
           ))}
         </div>
+        <p className="text-sm text-muted text-center mb-16">Supply capped at 1B tokens with 10% permanently burned.</p>
 
         {/* Token Distribution */}
         <motion.div
@@ -147,7 +153,7 @@ const Tokenomics: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="glass-card p-8 rounded-xl"
+          className="panel p-8"
         >
           <h3 className="text-3xl font-bold mb-8 text-center neon-text">
             Token Distribution
@@ -172,10 +178,10 @@ const Tokenomics: React.FC = () => {
                     />
                   );
                 })}
-                <div className="absolute inset-4 bg-dark-bg rounded-full flex items-center justify-center">
+                <div className="absolute inset-4 bg-bg rounded-full flex items-center justify-center">
                   <div className="text-center">
                     <p className="text-2xl font-bold neon-text">$FRSHMEME</p>
-                    <p className="text-gray-400 text-sm">Distribution</p>
+                    <p className="text-muted text-sm">Distribution</p>
                   </div>
                 </div>
               </div>
@@ -195,8 +201,8 @@ const Tokenomics: React.FC = () => {
                   <div className={`w-4 h-4 rounded ${item.color}`}></div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
-                      <span className="text-white font-semibold">{item.label}</span>
-                      <span className="text-gray-400">{item.percentage}%</span>
+                      <span className="text-text font-semibold">{item.label}</span>
+                      <span className="text-muted">{item.percentage}%</span>
                     </div>
                   </div>
                 </motion.div>
@@ -211,23 +217,23 @@ const Tokenomics: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="glass-card p-8 rounded-xl mt-8"
+          className="panel p-8 mt-8"
         >
           <h3 className="text-3xl font-bold mb-6 text-center electric-text">
             Airdrop Eligibility
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-neon-green text-4xl font-bold mb-2">1000+</div>
-              <p className="text-gray-300">Minimum $FRSHMEME Holdings</p>
+              <div className="text-primary text-4xl font-bold mb-2">1000+</div>
+              <p className="text-muted">Minimum $FRSHMEME Holdings</p>
             </div>
             <div className="text-center">
-              <div className="text-electric-blue text-4xl font-bold mb-2">30</div>
-              <p className="text-gray-300">Days Holding Period</p>
+              <div className="text-accent text-4xl font-bold mb-2">30</div>
+              <p className="text-muted">Days Holding Period</p>
             </div>
             <div className="text-center">
-              <div className="text-neon-green text-4xl font-bold mb-2">5+</div>
-              <p className="text-gray-300">Community Interactions</p>
+              <div className="text-primary text-4xl font-bold mb-2">5+</div>
+              <p className="text-muted">Community Interactions</p>
             </div>
           </div>
         </motion.div>
