@@ -1,32 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Twitter, MessageCircle, Send, Users, Activity, Trophy } from 'lucide-react';
+import { Users, Activity, Trophy } from 'lucide-react';
 
 const Community: React.FC = () => {
-  const socialLinks = [
-    {
-      name: "Twitter",
-      icon: <Twitter className="w-8 h-8" />,
-      followers: "25.4K",
-      link: "#",
-      color: "hover:text-blue-400"
-    },
-    {
-      name: "Discord",
-      icon: <MessageCircle className="w-8 h-8" />,
-      followers: "18.2K",
-      link: "#",
-      color: "hover:text-purple-400"
-    },
-    {
-      name: "Telegram",
-      icon: <Send className="w-8 h-8" />,
-      followers: "32.1K",
-      link: "#",
-      color: "hover:text-blue-500"
-    }
-  ];
-
   const communityStats = [
     {
       icon: <Users className="w-8 h-8" />,
@@ -93,35 +69,6 @@ const Community: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Social Links */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.link}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`glass-card p-8 rounded-xl text-center hover:scale-105 transition-all duration-300 ${social.color} group`}
-            >
-              <div className="text-white group-hover:scale-110 transition-transform duration-300 mb-4 flex justify-center">
-                {social.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                {social.name}
-              </h3>
-              <p className="text-2xl font-black text-electric-blue mb-2">
-                {social.followers}
-              </p>
-              <p className="text-gray-400 text-sm">
-                Followers
-              </p>
-            </motion.a>
-          ))}
-        </div>
-
         {/* Newsletter Signup */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
