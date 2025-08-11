@@ -24,6 +24,7 @@ const Header: React.FC = () => {
   ];
 
   return (
+
     <header className="fixed top-0 inset-x-0 z-50 bg-black/40 backdrop-blur-md border-b border-border">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <motion.span
@@ -34,6 +35,35 @@ const Header: React.FC = () => {
         >
           $FRSHMEME
         </motion.span>
+=======
+    <header className="fixed top-0 left-0 right-0 z-50 glass-card">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <motion.div
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-2xl font-bold neon-text">$FRSHMEME</span>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="text-white hover:text-neon-green transition-colors duration-300"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </nav>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">

@@ -93,20 +93,33 @@ const Tokenomics: React.FC = () => {
           <p className="text-muted">Live $FRSHMEME Price</p>
           <div className="flex items-center justify-center space-x-2">
             <span className="text-4xl font-extrabold text-text">
+=======
+          <p className="text-gray-300">Live $FRSHMEME Price</p>
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-4xl font-extrabold text-white">
+
               $
               {price.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
               })}
             </span>
             {change.up ? (
+
               <ArrowUpRight className="w-6 h-6 text-primary" />
+=======
+              <ArrowUpRight className="w-6 h-6 text-neon-green" />
+
             ) : (
               <ArrowDownRight className="w-6 h-6 text-red-500" />
             )}
           </div>
           <p
             className={`text-lg font-bold ${
+
               change.up ? 'text-primary' : 'text-red-500'
+=======
+              change.up ? 'text-neon-green' : 'text-red-500'
+
             }`}
           >
             {change.up ? '+' : '-'}
