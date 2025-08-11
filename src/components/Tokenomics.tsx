@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Coins, Users, Flame, Lock } from 'lucide-react';
+import {
+  Coins,
+  Users,
+  Flame,
+  Lock,
+  ArrowUpRight,
+  ArrowDownRight,
+} from 'lucide-react';
 
 const Tokenomics: React.FC = () => {
+  const [price, setPrice] = useState(1);
+  const [change, setChange] = useState<{ percent: number; up: boolean }>({
+    percent: 0,
+    up: true,
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const up = Math.random() > 0.5;
+      const percent = up
+        ? Math.random() * (7265423 - 7) + 7
+        : Math.random() * (32 - 7) + 7;
+      const multiplier = up ? 1 + percent / 100 : 1 - percent / 100;
+      setPrice((prev) => prev * multiplier);
+      setChange({ percent, up });
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   const tokenStats = [
     {
       icon: <Coins className="w-8 h-8" />,
@@ -53,6 +79,38 @@ const Tokenomics: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Transparent and sustainable token economics designed for long-term growth and community rewards.
+          </p>
+        </motion.div>
+
+        {/* Live Price */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
+        >
+          <p className="text-gray-300">Live $FRSHMEME Price</p>
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-4xl font-extrabold text-white">
+              $
+              {price.toLocaleString(undefined, {
+                maximumFractionDigits: 2,
+              })}
+            </span>
+            {change.up ? (
+              <ArrowUpRight className="w-6 h-6 text-neon-green" />
+            ) : (
+              <ArrowDownRight className="w-6 h-6 text-red-500" />
+            )}
+          </div>
+          <p
+            className={`text-lg font-bold ${
+              change.up ? 'text-neon-green' : 'text-red-500'
+            }`}
+          >
+            {change.up ? '+' : '-'}
+            {change.percent.toFixed(2)}%
           </p>
         </motion.div>
 
