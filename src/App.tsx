@@ -17,6 +17,13 @@ function App() {
       <div className="min-h-screen animated-bg relative">
         <FloatingParticles />
         <Header />
+        <gecko-coin-price-marquee-widget
+          locale="en"
+          dark-mode="true"
+          outlined="true"
+          coin-ids="shiba-inu,pepe,pudgy-penguins,bonk,floki,spx6900,fartcoin,dogwifcoin,dogecoin,dog-go-to-the-moon-rune,turbo,peanut-the-squirrel,pump-fun"
+          initial-currency="usd"
+        />
         <main>
           <Hero />
           <About />
