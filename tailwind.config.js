@@ -1,26 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        'neon-green': '#00ff41',
-        'electric-blue': '#0099ff',
-        'dark-bg': '#0a0a0a',
-        'card-bg': 'rgba(255, 255, 255, 0.05)',
+        bg: 'var(--bg)',
+        panel: 'var(--panel)',
+        text: 'var(--text)',
+        muted: 'var(--muted)',
+        primary: 'var(--primary)',
+        accent: 'var(--accent)',
+        border: 'var(--border)',
       },
       fontFamily: {
-        'orbitron': ['Orbitron', 'Courier New', 'monospace'],
-        'mono': ['Courier New', 'monospace'],
+        display: ['Orbitron', 'system-ui', 'sans-serif'],
+        mono: ['Courier New', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
-      backdropBlur: {
-        'xs': '2px',
+      boxShadow: {
+        glass: '0 8px 30px rgba(0,0,0,.35)',
+      },
+      borderRadius: {
+        xl: '1rem',
+        xxl: '1.5rem',
+        pill: '9999px',
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
         'slide-up': 'slide-up 0.6s ease-out',
       },

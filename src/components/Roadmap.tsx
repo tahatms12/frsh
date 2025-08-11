@@ -53,28 +53,28 @@ const Roadmap: React.FC = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="w-6 h-6 text-neon-green" />;
+        return <CheckCircle className="w-6 h-6 text-primary" />;
       case 'in-progress':
-        return <Clock className="w-6 h-6 text-electric-blue" />;
+        return <Clock className="w-6 h-6 text-accent" />;
       default:
-        return <Circle className="w-6 h-6 text-gray-400" />;
+        return <Circle className="w-6 h-6 text-muted" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'border-neon-green';
+        return 'border-primary';
       case 'in-progress':
-        return 'border-electric-blue';
+        return 'border-accent';
       default:
         return 'border-gray-400';
     }
   };
 
   return (
-    <section id="roadmap" className="py-20 relative z-10">
-      <div className="container mx-auto px-4">
+    <section id="roadmap" className="py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,10 +82,10 @@ const Roadmap: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 neon-text">
+          <h2 className="font-black mb-6 neon-text">
             Roadmap
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-muted max-w-4xl mx-auto">
             Our strategic plan for building the ultimate meme coin investment ecosystem.
           </p>
         </motion.div>
@@ -110,16 +110,16 @@ const Roadmap: React.FC = () => {
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
                   <div className="glass-card p-6 rounded-xl">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold text-white">{item.phase}</h3>
+                      <h3 className="text-2xl font-bold text-text">{item.phase}</h3>
                       {getStatusIcon(item.status)}
                     </div>
-                    <h4 className="text-xl font-semibold text-electric-blue mb-4">
+                    <h4 className="text-xl font-semibold text-accent mb-4">
                       {item.title}
                     </h4>
                     <ul className="space-y-2">
                       {item.items.map((listItem, itemIndex) => (
-                        <li key={itemIndex} className="text-gray-300 flex items-center">
-                          <span className="w-2 h-2 bg-neon-green rounded-full mr-3 flex-shrink-0" />
+                        <li key={itemIndex} className="text-muted flex items-center">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
                           {listItem}
                         </li>
                       ))}
@@ -129,7 +129,7 @@ const Roadmap: React.FC = () => {
 
                 {/* Timeline Node */}
                 <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0">
-                  <div className={`w-16 h-16 rounded-full border-4 ${getStatusColor(item.status)} bg-dark-bg flex items-center justify-center`}>
+                  <div className={`w-16 h-16 rounded-full border-4 ${getStatusColor(item.status)} bg-bg flex items-center justify-center`}>
                     {getStatusIcon(item.status)}
                   </div>
                 </div>
@@ -152,10 +152,10 @@ const Roadmap: React.FC = () => {
             <h3 className="text-2xl font-bold mb-4 electric-text">
               Stay Updated
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-muted mb-6">
               Follow our progress and get notified about major milestones and announcements.
             </p>
-            <button className="bg-neon-green text-black px-8 py-3 rounded-lg font-bold hover:bg-neon-green/80 transition-colors">
+            <button className="bg-primary text-bg px-8 py-3 rounded-lg font-bold hover:bg-primary/80 transition-colors">
               Join Community
             </button>
           </div>

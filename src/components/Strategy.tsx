@@ -27,8 +27,8 @@ const Strategy: React.FC = () => {
   ];
 
   return (
-    <section id="strategy" className="py-20 relative z-10">
-      <div className="container mx-auto px-4">
+    <section id="strategy" className="py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,10 +36,10 @@ const Strategy: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 electric-text">
+          <h2 className="font-black mb-6 electric-text">
             Investment Strategy
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-muted max-w-4xl mx-auto">
             Our sophisticated approach to meme coin investment combines technical analysis, 
             community assessment, and strategic timing.
           </p>
@@ -55,13 +55,13 @@ const Strategy: React.FC = () => {
               viewport={{ once: true }}
               className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform duration-300"
             >
-              <div className="text-neon-green mb-4 flex justify-center">
+              <div className="text-primary mb-4 flex justify-center">
                 {strategy.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">
+              <h3 className="text-xl font-bold mb-3 text-text">
                 {strategy.title}
               </h3>
-              <p className="text-gray-300 text-sm">
+              <p className="text-muted text-sm">
                 {strategy.description}
               </p>
             </motion.div>
@@ -79,13 +79,13 @@ const Strategy: React.FC = () => {
             Our Investment Philosophy
           </h3>
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-lg text-muted mb-6 leading-relaxed">
               We operate as a sophisticated meme coin investment fund, utilizing transaction fees to identify 
               and invest in high-potential meme tokens before they achieve mainstream adoption. Our rigorous 
               selection process focuses on coins with strong communities, proven staying power, and long-term 
               growth potential.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed">
               Post-graduation, our community will receive proportional $FRSHMEME airdrops based on our 
               portfolio performance. This creates a symbiotic relationship where our success directly 
               benefits our token holders.

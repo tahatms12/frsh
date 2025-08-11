@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-black/50 backdrop-blur-lg border-t border-white/10 py-12 relative z-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-black/50 backdrop-blur-lg border-t border-border py-12 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <motion.div
@@ -30,15 +30,10 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="https://24vzlu2kzs.ufs.sh/f/4JlBnp1v6U48k8uO4IDmleihCX1jUIwbvFKds0kp6Aug7WrS" 
-                alt="FRSHMEME Logo" 
-                className="w-10 h-10 rounded-full"
-              />
+            <div className="mb-4">
               <span className="text-2xl font-bold neon-text">$FRSHMEME</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-muted mb-4 max-w-md">
               The freshest memes on the blockchain. Strategic meme coin investment fund 
               deploying transaction fees to identify high-potential tokens.
             </p>
@@ -47,7 +42,7 @@ const Footer: React.FC = () => {
                 <motion.a
                   key={social.name}
                   href={social.href}
-                  className="text-gray-400 hover:text-neon-green transition-colors duration-300"
+                  className="text-muted hover:text-primary transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -64,13 +59,13 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold text-text mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-electric-blue transition-colors duration-300"
+                    className="text-muted hover:text-accent transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -86,12 +81,12 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
+            <h3 className="text-lg font-bold text-text mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-electric-blue transition-colors duration-300 flex items-center"
+                  className="text-muted hover:text-accent transition-colors duration-300 flex items-center"
                 >
                   Whitepaper <ExternalLink size={14} className="ml-1" />
                 </a>
@@ -99,7 +94,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-electric-blue transition-colors duration-300 flex items-center"
+                  className="text-muted hover:text-accent transition-colors duration-300 flex items-center"
                 >
                   Audit Report <ExternalLink size={14} className="ml-1" />
                 </a>
@@ -107,7 +102,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-electric-blue transition-colors duration-300 flex items-center"
+                  className="text-muted hover:text-accent transition-colors duration-300 flex items-center"
                 >
                   DEX Screener <ExternalLink size={14} className="ml-1" />
                 </a>
@@ -115,7 +110,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-electric-blue transition-colors duration-300 flex items-center"
+                  className="text-muted hover:text-accent transition-colors duration-300 flex items-center"
                 >
                   CoinGecko <ExternalLink size={14} className="ml-1" />
                 </a>
@@ -130,19 +125,19 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-muted text-sm mb-4 md:mb-0">
             © {currentYear} $FRSHMEME. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-muted hover:text-text transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-muted hover:text-text transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-muted hover:text-text transition-colors">
               Disclaimer
             </a>
           </div>
