@@ -22,9 +22,33 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center lg:text-left"
         >
+
           <h1 className="font-black neon-text text-primary">$FRSHMEME</h1>
           <p className="mt-4 text-xl text-muted max-w-xl mx-auto lg:mx-0">
             The Freshest Memes on the Blockchain. Strategic meme coin investment fund deploying transaction fees to identify and invest in high-potential tokens before mainstream adoption.
+          <a
+            href="https://freshmemes.online"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://24vzlu2kzs.ufs.sh/f/4JlBnp1v6U48k8uO4IDmleihCX1jUIwbvFKds0kp6Aug7WrS"
+              alt="FRSHMEME Logo"
+              className="w-32 h-32 mx-auto mb-8 rounded-full animate-pulse-glow"
+            />
+          </a>
+          
+          <h1 className="text-4xl md:text-7xl font-black mb-6">
+            <span className="neon-text">$FRSHMEME</span>
+          </h1>
+          
+          <p className="text-xl md:text-3xl mb-8 electric-text font-bold">
+            The Freshest Memes on the Blockchain
+          </p>
+          
+          <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto text-gray-300">
+            Strategic meme coin investment fund deploying transaction fees to identify and invest in 
+            high-potential tokens before mainstream adoption. Join the revolution of fresh memes!
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
