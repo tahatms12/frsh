@@ -11,8 +11,11 @@ import Community from './components/Community';
 import Footer from './components/Footer';
 import FloatingParticles from './components/FloatingParticles';
 import PriceTicker from './components/PriceTicker';
-import TrainingCatalogPage from './pages/training';
-import TrainingCoursePage from './pages/training/[courseSlug]';
+import LoginPage from './pages/training/LoginPage';
+import DashboardPage from './pages/training/DashboardPage';
+import CoursePage from './pages/training/CoursePage';
+import AdminPage from './pages/training/AdminPage';
+import VerifyPage from './pages/training/VerifyPage';
 
 function App() {
   return (
@@ -36,8 +39,11 @@ function App() {
               </main>
             )}
           />
-          <Route path="/training" element={<TrainingCatalogPage />} />
-          <Route path="/training/:courseSlug" element={<TrainingCoursePage />} />
+          <Route path="/training" element={<LoginPage />} />
+          <Route path="/training/dashboard" element={<DashboardPage />} />
+          <Route path="/training/course/:courseId" element={<CoursePage />} />
+          <Route path="/training/admin" element={<AdminPage />} />
+          <Route path="/training/verify" element={<VerifyPage />} />
         </Routes>
         <Footer />
       </div>

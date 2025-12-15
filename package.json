@@ -9,7 +9,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "training:build": "node scripts/training/buildCatalog.js",
-    "training:validate": "node scripts/training/validateCatalog.js"
+    "training:validate": "node scripts/training/validateCatalog.js",
+    "training:server": "node scripts/training/server.js",
+    "training:migrate": "node scripts/training/migrate.js",
+    "training:seed": "node scripts/training/seedAdmin.js"
   },
   "dependencies": {
     "framer-motion": "^10.16.16",
